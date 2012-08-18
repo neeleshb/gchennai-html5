@@ -1,0 +1,1506 @@
+<!--
+Google IO 2012 HTML5 Slide Template
+
+Authors: Eric Bidelman <ebidel@gmail.com>
+         Luke Mahé <lukem@google.com>
+
+URL: https://code.google.com/p/io-2012-slides
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>g|india</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="all" href="theme/css/add2.css">
+
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="logoslide nobackground">
+    <article class="flexbox vcenter">
+      <span><img src="images/google_developers_logo.png"></span>
+    </article>
+  </slide>
+
+  <slide class="title-slide segue nobackground">
+    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+    <hgroup class="auto-fadein">
+      <h1 data-config-title id="mainTitle">
+	    <span id="titleOther5" class="titleOther5">5</span>
+		<span id="titleH" class="titleH">H</span>
+		<span id="titleH2" class="titleH2">ere's </span>
+		<span id="titleT" class="titleT">T</span>
+		<span id="titleT2" class="titleT2">hat </span>
+	    <span id="titleM" class="titleM">M</span>
+		<span id="titleM2" class="titleM2">agical </span>
+		<span id="titleL" class="titleL">L</span>
+		<span id="titleL2" class="titleL2">anguge </span>
+		<span id="title5" class="title5">5</span>
+	    <br/></h1>
+      <h2 data-config-subtitle>The web can do that ?!</h2>
+      <p data-config-presenter><!-- populated from slide_config.json --></p>
+    </hgroup>
+  </slide>
+  <slide>
+    <hgroup>
+      <h2>HTML5</h2>
+      <h3>Taking web development to the next level.</h3>
+</hgroup>
+<article>
+      <ul class="build">
+		<li>Fast. Secure. Responsive. Interactive.<br/></li>
+		<li>Stunningly beautiful. Lot of support for animation and graphics.<br/></li>
+		<li>Provides ways to create as complex apps as desktop allows.<br/></li>
+		<li>Bridges the gap between offline and online, 2D and 3D, server and client.<br/></li>
+		<li>Much easier development.<br/></li>
+		<li>Browsers more secure than ever.<br/></li>
+		</ul>
+	<div id="matrixQuote" class="matrixQuote">
+		<span class="quotePart1">This will be the fifth time we have developed it...</span>
+		<span class="quotePart2">...And we have become exceedingly efficient at it.</span>
+	</div>
+</article>
+</slide>
+<!-- Whats in it -->
+<slide>
+	<hgroup>
+      <h2>HTML5</h2>
+      <h3>What's in it?</h3>
+    </hgroup>
+<article>
+<img src="images/html5logo.png" width="300" height="300" class="html5Image"></img>
+<div class="html5_groups html5_css3">CSS3</div>
+<div class="html5_groups html5_conn">Connectivity</div>
+<div class="html5_groups html5_dev">Device Access</div>
+<div class="html5_groups html5_perf">Performance & Integration</div>
+<div class="html5_groups html5_3d">3D, Graphics & Effects</div>
+<div class="html5_groups html5_off">Offline & Storage</div>
+<div class="html5_groups html5_mult">Multimedia</div>
+<div class="html5_groups html5_sem">Semantics</div>
+</article>
+</slide>
+	
+ <!-- css3 -->
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>CSS 3</h2>
+      <h3>Coolest. Simplest. Sexiest.</h3>
+    </hgroup>
+  </slide>
+<!-- border radius -->
+  <slide>
+    <hgroup>
+      <h2>Rounded Corners</h2>
+      <h3>border-radius</h3>
+    </hgroup>
+    <article>
+      
+<pre class="prettyprint" data-lang="css">
+
+<div class="borderImageExample" id="borderImageExampleId">
+&lt;style&gt;
+    div { 
+        border-top-left-radius: <span style="color:#7f0000;" id="radiusTL">0</span> px;   <input type="range" min="0" max="100" value="0" style="position:absolute;left:520px;" onchange="document.getElementById('borderImageExampleId').style.borderTopLeftRadius=this.value + 'px';document.getElementById('radiusTL').innerHTML=this.value;"></input>
+        border-top-right-radius: <span style="color:#7f0000;"  id="radiusTR">0</span> px;   <input type="range" min="0" max="100" value="0" style="position:absolute;left:520px;" onchange="document.getElementById('borderImageExampleId').style.borderTopRightRadius=this.value + 'px';document.getElementById('radiusTR').innerHTML=this.value;"></input>
+        border-bottom-left-radius: <span style="color:#7f0000;" id="radiusBL">0</span> px;   <input type="range" min="0" max="100" value="0" style="position:absolute;left:520px;" onchange="document.getElementById('borderImageExampleId').style.borderBottomLeftRadius=this.value + 'px';document.getElementById('radiusBL').innerHTML=this.value;"></input>
+        border-bottom-right-radius: <span style="color:#7f0000;"  id="radiusBR">0</span> px;   <input type="range" min="0" max="100" value="0" style="position:absolute;left:520px;" onchange="document.getElementById('borderImageExampleId').style.borderBottomRightRadius=this.value + 'px';document.getElementById('radiusBR').innerHTML=this.value;"></input>
+    }
+&lt;/style&gt;
+</div>
+</pre>
+    </article>
+  </slide>
+  <!-- shadows -->
+  <slide>
+    <hgroup>
+      <h2>Shadows</h2>
+      <h3><div class="textShadowExample" id="textShadowExampleId">text-shadow, box-shadow</div></h3>
+    </hgroup>
+    <article>
+      
+<pre class="prettyprint" data-lang="css">
+
+<div class="boxShadowExample" id="boxShadowExampleId">
+&lt;style&gt;
+    div { 
+        box-shadow: <input type="number" id="boxShadowH" value="5" class="boxShadowInput" onchange="setShadow();">px <input type="number" id="boxShadowV" class="boxShadowInput" value="5" onchange="setShadow();">px <input type="number" id="boxShadowB" class="boxShadowInput" value="10" onchange="setShadow();">px <input id="boxShadowS" type="number" class="boxShadowInput" value="10" onchange="setShadow();">px <input id="boxShadowC" type="color" value="#808080" onchange="setShadow();">;
+        text-shadow: <input type="number" id="txtShadowH" value="5" class="boxShadowInput" onchange="setTxtShadow();">px <input type="number" id="txtShadowV" class="boxShadowInput" value="5" onchange="setTxtShadow();">px <input type="number" id="txtShadowB" class="boxShadowInput" value="10" onchange="setTxtShadow();">px <input id="txtShadowC" type="color" value="#808080" onchange="setTxtShadow();">;
+    }
+&lt;/style&gt;
+</div>
+</pre>
+    </article>
+  </slide>
+
+<!-- Text stroke-->
+  <slide>
+    <hgroup>
+      <h2>Text Strokes</h2>
+      <h3>text-stroke-color, text-stroke-width, text-fill-color</h3>
+    </hgroup>
+    <article>
+
+<pre class="prettyprint" data-lang="css">
+&lt;style&gt;
+    div { 
+        text-stroke-color:  <input id="txtStrokeC" type="color" value="#FF0000" onchange="setTxtStroke();">
+        text-stroke-width: <input type="number" id="txtStrokeW" value="3" class="boxShadowInput" onchange="setTxtStroke();">px;
+        text-fill-color: <input type="color" id="txtFillC" value="#FFFF00" onchange="setTxtStroke();">;
+    }
+&lt;/style&gt;
+</pre>
+    </article>
+   <div class="textStrokeExample" id="textStrokeExampleId">Text Stroke Example</div>
+  </slide>
+<!-- Image Cropping -->
+  <slide>
+    <hgroup>
+      <h2>Image Cropping</h2>
+      <h3>clip</h3>
+    </hgroup>
+    <article>
+
+<pre class="prettyprint" data-lang="css">
+&lt;style&gt;
+    div { 
+        clip:  rect(<input id="clipT" type="number" value="0" class="clipInput" onchange="setClip();">px,&nbsp;&nbsp;<input id="clipR" type="number" class="clipInput" value="250" onchange="setClip();">px,&nbsp;&nbsp;<input id="clipB" type="number" value="250" class="clipInput" onchange="setClip();">px,&nbsp;&nbsp;<input id="clipL" type="number" class="clipInput" value="0" onchange="setClip();">px);
+    }
+&lt;/style&gt;
+</pre>
+    </article>
+   <img src="images/sky.jpg" class="clipExample" height="250" width="250" id="clipExampleId" />
+  </slide>
+  <!-- opacity -->
+ <slide>
+  <hgroup>
+      <h2>Opacity</h2>
+      <h3>opacity</h3>
+    </hgroup>
+    <article>
+     <div id="opacityExampleId">
+<pre class="prettyprint" data-lang="css">
+&lt;style&gt;
+    div { 
+        opacity: <span id="opacityValue">1</span>;<input type="range" value="100" min="1" max="100" class="opacityInput"  onchange="setOpacity(this.value);">
+    }
+&lt;/style&gt;
+</pre>
+	</div>
+    </article>
+  </slide>	
+
+  <!-- Columns -->
+  <slide>
+  <hgroup>
+      <h2>Columns</h2>
+      <h3>column-count, column-rule, column-gap</h3>
+    </hgroup>
+    <article>
+<pre class="prettyprint" data-lang="css">
+&lt;style&gt;
+    div { 
+        column-count: <span id="columnCountSpan" class="columnClass"> 1;</span>&nbsp;&nbsp;&nbsp;<input type="range" min="1" max="6" value="1" class="columnCount" id="columnCount" onchange="setColumn();">
+        column-rule: <input type="number" min="1" max="5" value="1" id="columnRule" onchange="setColumn();">px solid <input type="color" id="columnRuleColor" value="#d00000" onchange="setColumn()">;
+        column-gap:<span id="columnGapSpan" class="columnClass">10</span>px;&nbsp;&nbsp;&nbsp;<input type="range" min="1" max="100" value="1" class="columnGap" id="columnGap" onchange="setColumn();">
+    }
+&lt;/style&gt;
+
+	  </pre>
+	<div id="columnExampleId" class="columnExample">
+		October arrived, spreading a damp chill over the grounds and into the castle. Madam Pomfrey, the nurse, was kept busy by a sudden spate of colds among the staff and students. Her Pepperup potion worked instantly, though it left the drinker smoking at the ears for several hours afterward. Ginny Weasley, who had been looking pale, was bullied into taking some by Percy. The steam pouring from under her vivid hair gave the impression that her whole head was on fire. <br/><br/>Raindrops the size of bullets thundered on the castle windows for days on end; the lake rose, the flower beds turned into muddy streams, and Hagrid's pumpkins swelled to the size of garden sheds. Oliver Wood's enthusiasm for regular training sessions, however, was not dampened, which was why Harry was to be found, late one stormy Saturday afternoon a few days before Halloween, returning to Gryffindor Tower, drenched to the skin and splattered with mud. <br/><br/>Even aside from the rain and wind it hadn't been a happy practice session. Fred and George, who had been spying on the Slytherin team, had seen for themselves the speed of those new Nimbus Two Thousand and Ones. They reported that the Slytherin team was no more than seven greenish blurs, shooting through the air like missiles. 
+<br/><br/>As Harry squelched along the deserted corridor he came across somebody who looked just as preoccupied as he was. Nearly Headless Nick, the ghost of Gryffindor Tower, was staring morosely out of a window, muttering under his breath, ". . . don't fulfill their requirements . . . half an inch, if that . . ." 
+	</div>
+    </article>
+  </slide>	
+ <!-- text-overflow -->
+ <slide>
+  <hgroup>
+      <h2>Text-Wrap</h2>
+      <h3>text-overflow</h3>
+    </hgroup>
+    <article>
+<pre class="prettyprint" data-lang="css">
+&lt;style&gt;
+    div { 
+        white-space: no-wrap;
+        text-overflow: ellipsis;
+    }
+&lt;/style&gt;
+</pre>
+		<b style="float:left;">ellipsis:</b><div id="overflowEllipsisId" class="overflowAll overflowEllipsis">October arrived, spreading a damp chill over the grounds and into the castle. Madam Pomfrey, the nurse, was kept busy by a sudden spate of colds among the staff and students. Her Pepperup potion worked instantly, though it left the drinker smoking at the ears for several hours afterward. Ginny Weasley, who had been looking pale, was bullied into taking some by Percy. 
+		</div>
+		<div style="clear:left;height:30px;"></div>
+		<b style="float:left;">clip:</b><div id="overflowClipId" class="overflowAll overflowClip">October arrived, spreading a damp chill over the grounds and into the castle. Madam Pomfrey, the nurse, was kept busy by a sudden spate of colds among the staff and students. Her Pepperup potion worked instantly, though it left the drinker smoking at the ears for several hours afterward. Ginny Weasley, who had been looking pale, was bullied into taking some by Percy. 
+		</div>
+		<input type="range" class="sliderOverflow" max="800" min="0" value="800" id="sliderOverflowId" onchange="setOverflowWidth(this.value);">
+    </article>
+  </slide>
+ <!-- Gradients -->
+ <slide>
+  <hgroup>
+      <h2>Gradients</h2>
+      <h3>linear-gradient, radial-gradient</h3>
+    </hgroup>
+    <article>
+<pre class="prettyprint" data-lang="css">
+&lt;style&gt;
+    div { 
+        background-image: linear-gradient(#000000, #FFFFFF);
+    }
+    div2 { 
+        background-image: radial-gradient(#000000, #FFFFFF);
+    }
+&lt;/style&gt;
+	  </pre>
+    </article>
+    <div class="linearGradientExample" id="linearGradientExampleId"></div>
+    <div class="lgExample1Input"> from:&nbsp;&nbsp;&nbsp;&nbsp;<input type="color" value="#000000"  id="lg1ColorF" onchange="changeLinearGradient();" /></div>
+    <div class="lgExample2Input"> to:&nbsp;&nbsp;&nbsp;&nbsp; <input type="color"  value="#FFFFFF" id="lg1ColorT" onchange="changeLinearGradient();" /></div>
+    <div class="radialGradientExample" id="radialGradientExampleId"></div>
+    <div class="rgExample1Input"> from:&nbsp;&nbsp;&nbsp;&nbsp;<input type="color" value="#000000"  id="rg1ColorF" onchange="changeRadialGradient();" /></div>
+    <div class="rgExample2Input"> to:&nbsp;&nbsp;&nbsp;&nbsp; <input type="color"  value="#FFFFFF" id="rg1ColorT" onchange="changeRadialGradient();" /></div>
+
+  </slide>
+<!-- gradients 2 -->
+<slide>
+  <hgroup>
+      <h2>Gradients</h2>
+      <h3>Example</h3>
+    </hgroup>
+    <article>
+<pre class="prettyprint" data-lang="css">
+&lt;style&gt;
+    div { 
+        background-image: linear-gradient(left, red 0%, orange 16%, yellow 33%, green 50%, blue 67%, 
+                                          indigo 84%, violet 100%); 
+    }
+&lt;/style&gt;
+	  </pre>
+    </article>
+    <div class="linearGradientExample2" id="linearGradientExampleId2"></div>
+  </slide>
+<!-- box-reflect -->
+ <slide>
+  <hgroup>
+      <h2>Reflection</h2>
+      <h3>box-reflect</h3>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="css">
+&lt;style&gt;
+    div { 
+        box-reflect: right 10px gradient(linear, left top, right top, from(transparent), to(white));
+    }
+&lt;/style&gt;
+	  </pre>
+    </article>
+   <div class="boxReflectExample">
+	Hello World!
+	</div>
+  </slide>
+
+<!-- Transformations -->
+ <slide>
+  <hgroup>
+      <h2>Tranformations</h2>
+      <h3>transform</h3>
+    </hgroup>
+    <article>
+<pre class="prettyprint" data-lang="css">
+&lt;style&gt;
+    div { 
+        transform: translate(100px, 100px) scale(0.7, 1.3) rotate(45deg) skew(20deg);
+    }
+&lt;/style&gt;
+	  </pre>
+    </article>
+   <div id="transformationExampleId" class="transformationExample">
+	Hello World!
+   </div>
+   <input type="submit" value="transform" onclick="document.getElementById('transformationExampleId').classList.add('transformAction');" />
+   <br/>
+   <input type="submit" value="untransform" onclick="document.getElementById('transformationExampleId').classList.remove('transformAction');" />
+
+  </slide>
+<!-- Transformations 2 -->
+<slide>
+  <hgroup>
+      <h2>Tranformations</h2>
+      <h3>translate, scale, rotate, skew</h3>
+    </hgroup>
+   <article>
+	  <div id="transformationExampleId2" class="transformationExample" style="margin-top: -30px;">
+	    Hello World!
+     </div>
+   </article>
+  <div class="translateParams">
+	translateX: <span id="translateXSpanId" class="translateXSpan">0</span>px; <input type="range" id="translateXRangeId" class="translateXRange" min="0" max="1000" value="0" onchange="doTransform();"/><br/>
+	translateY: <span id="translateYSpanId" class="translateYSpan">0</span>px; <input type="range" id="translateYRangeId" class="translateYRange" min="0" max="500" value="0" onchange="doTransform();"/><br/>
+	scaleX: <span id="scaleXSpanId" class="scaleXSpan">1</span>; <input type="range" id="scaleXRangeId" class="scaleXRange" min="0" max="2" value="1" step="0.01" onchange="doTransform();"/><br/>
+	scaleY: <span id="scaleYSpanId" class="scaleYSpan">1</span>;<input type="range" id="scaleYRangeId" class="scaleYRange" min="0" max="2"  value="1" step="0.01" onchange="doTransform();" /><br/>
+	rotateX: <span id="rotateXSpanId" class="rotateXSpan">0</span>deg; <input type="range" id="rotateXRangeId" class="rotateXRange" min="0" max="360" value="0" onchange="doTransform();"/><br/>
+	rotateY: <span id="rotateYSpanId" class="rotateYSpan">0</span>deg; <input type="range" id="rotateYRangeId" class="rotateYRange" min="0" max="360" value="0" onchange="doTransform();"/><br/>
+	skewX: <span id="skewXSpanId" class="skewXSpan">0</span>deg; <input type="range" id="skewXRangeId" class="skewXRange" min="0" max="1000" value="0" onchange="doTransform();"/><br/>
+	skewY: <span id="skewYSpanId" class="skewYSpan">0</span>deg; <input type="range" id="skewYRangeId" class="skewYRange" min="0" max="1000" value="0" onchange="doTransform();"/><br/>
+	</div>
+	<a style="font-size:18px; float: right;margin-top:10px;" href="http://www.paulrhayes.com/experiments/cube-3d/">3D cube demo</a>
+  </slide>
+<!-- Transitions -->
+ <slide>
+  <hgroup>
+      <h2>Transitions</h2>
+      <h3>transition</h3>
+    </hgroup>
+    <article>
+<pre class="prettyprint" data-lang="css">
+&lt;style&gt;
+    div { 
+        transition: width 2s, height 2s, transform 2s;
+    }
+    div:hover {
+        transform:rotate(180deg);
+        width:200px;
+        height: 200px;
+    }
+&lt;/style&gt;
+</pre>
+    </article>
+    <div class="transitionExample" id="transitionExampleId">
+	Hello World!!
+	</div>
+  </slide>
+<!-- Transitions 2 -->
+ <slide>
+  <hgroup>
+      <h2>Transitions</h2>
+      <h3>transition-property, transition-duration, transition-delay</h3>
+    </hgroup>
+    <article>
+<pre class="prettyprint" data-lang="css">
+&lt;style&gt;
+    div { 
+        transition-property: marginLeft;
+        transition-duration: 2s;
+        transition-delay: 3s;
+        transition-timing-function: cubic-bezier(0.1, 1, 1, 0.5);
+    }
+    div:hover {
+        margin-left: 800px;
+    }
+&lt;/style&gt;
+	  </pre>
+	<a style="float:right; margin-right:20px;margin-top:0px;font-size:16px;" href="http://www.roblaplaca.com/examples/bezierBuilder/">bezier builder</a>
+    </article>
+    <div class="transitionExample2" id="transitionExampleId2">
+	Hello World!!
+	</div>
+  </slide>
+ 
+ <!-- Animations -->
+ <slide>
+  <hgroup>
+      <h2>Animations</h2>
+      <h3>keyframes</h3>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="css">
+&lt;style&gt;
+    @keyframes animate1 {
+        from {color:#FF0000; transform:rotateX(0deg) skewY(-30deg); }
+        to   {color:#0000FF; transform:rotateX(360deg) skewY(30deg); }
+    }
+    .helloWorldAnimate{
+        animation-name: animate1;
+        animation-duration: 2s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+   }
+&lt;/style&gt;
+</pre>
+  </article>
+   <div id="animationExampleId" class="animationExample">
+	Hello World!
+  </div>
+  </slide>
+<!-- animation2 -->
+<slide>
+  <hgroup>
+      <h2>Animations</h2>
+      <h3>animation</h3>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="css">
+&lt;style&gt;
+    @keyframes spin2 {
+        from {transform: rotate(0); }
+        to {transform: rotate(-2160deg); }
+    }
+    .chromeLogo {
+        animation:spin2 12s infinite cubic-bezier(0.9, 0.1, 0.1, 0.9);
+    }
+&lt;/style&gt;
+</pre>
+	<img src="images/chrome2.png" width="200" height="200" class="chromeLogo" />
+    </article>
+  </slide>
+<!-- animation3 -->
+<slide>
+  <hgroup>
+      <h2>Animations</h2>
+      <h3>keyframes with steps</h3>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="css">
+&lt;style&gt;
+    @keyframes animate2 {
+        0% {background-color: #DD0000;  color: #00DDDD; }
+        25% {background-color: #00DD00;  color: #DD00DD; 
+             transform:translateX(935px) skewY(40deg) rotateY(70deg); }
+        50% {background-color: #0000DD;  color: #DDDD00; 
+             transform:translateX(935px) translateY(-410px) skewX(130deg); } 
+        75% {background-color: #00DDDD;  color: #DD0000; 
+             transform:translateY(-410px) skewY(70deg) scaleX(1.8); }
+        100% {background-color: #DD0000; color:#00DDDD; }
+}
+&lt;/style&gt;
+</pre>
+    </article>
+   <div id="animationExampleId" class="animationExample2">Hello World!
+  </div>
+  </slide>
+<!--  multimedia -->
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Multimedia</h2>
+      <h3>Audio, Video.</h3>
+    </hgroup>
+  </slide>
+<!-- Audio -->
+  <slide>
+  <hgroup>
+      <h2>Audio</h2>
+      <h3></h3>
+    </hgroup>
+    <article>
+<pre class="prettyprint" data-lang="html">
+&lt;audio id='audioPlayer' autoplay controls loop &gt;
+    &lt;source src="song.ogg" type="audio/ogg" /&gt;
+    &lt;source src="song.mp3" type="audio/mp3" /&gt;
+&lt;/audio&gt;
+</pre>
+<pre class="prettyprint" data-lang="javascript">
+document.getElementById('audioPlayer').muted = false;
+document.getElementById('audioPlayer').play();
+document.getElementById('audioPlayer').pause();
+</pre>
+	<div id="audioExampleId" class="audioExample">
+		<input type="checkbox" id="audioAutoplay" onchange="changeAudio();"> Autoplay
+		&nbsp;&nbsp;&nbsp;
+		<input type="checkbox" checked id="audioControls" onchange="changeAudio();"> Controls
+		&nbsp;&nbsp;&nbsp;
+		<input type="checkbox" checked id="audioLoop" onchange="changeAudio();"> Loop
+		<br/>
+		<br/>
+		<div id="audioPlayerDiv">
+		  <audio id="audioPlayer" controls loop>
+	        <source src="files/friends.mp3" />
+	      </audio>
+	    </div>
+	 <div class="audioButtons">
+		<input type="button" value="mute/unmute" onclick="document.getElementById('audioPlayer').muted=!(document.getElementById('audioPlayer').muted)" />&nbsp;&nbsp;&nbsp;
+    </div>
+    </article>
+  </slide>
+<!-- Video -->
+  <slide>
+  <hgroup>
+      <h2>Video</h2>
+      <h3></h3>
+    </hgroup>
+    <article>
+<pre class="prettyprint" data-lang="html">
+&lt;video width="320" height="240" autoplay controls loop &gt;
+    &lt;source src="video.mp4" type="video/ogg" /&gt;
+    &lt;source src="video.mp4" type="video/mp4" /&gt;
+&lt;/video&gt;
+</pre>
+<video width="390" id="videoExampleId" class="videoExample" autoplay controls loop>
+	<source src="files/chrome.webm" type="video/webm" />
+	<source src="files/chrome.mp4" type="video/mp4" />
+	<source src="files/chrome.ogv" type="video/ogv" />
+</video>
+<script>
+  document.getElementById('videoExampleId').muted = true;
+</script>
+<input type="button" value="Toggle CSS Reflection" onclick="document.getElementById('videoExampleId').classList.toggle('videoExampleReflection');"/>
+<input type="button" value="Toggle CSS Transformation" onclick="document.getElementById('videoExampleId').classList.toggle('videoExampleTransformation');"/>
+
+	
+    </article>
+  </slide>
+<!-- 3d graphics -->
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>3D, Graphics & Effects</h2>
+      <h3>Canvas, SVG.</h3>
+    </hgroup>
+  </slide>
+<!-- Canvas -->
+  <slide>
+  <hgroup>
+      <h2>Canvas</h2>
+      <h3>2D</h3>
+    </hgroup>
+    <article>
+<pre class="prettyprint" data-lang="html">
+&lt;canvas id="canvas" width="838" height="180"&gt;&lt;/canvas&gt;
+</pre>
+<pre class="prettyprint" data-lang="javascript">
+var canvasContext = document.getElementById("canvas").getContext("2d");
+canvasContext.fillRect(250, 25, 150, 100);
+canvasContext.beginPath();
+canvasContext.arc(350, 110, 50, Math.PI * 1/2, Math.PI * 3/2);
+canvasContext.lineWidth = 15;
+canvasContext.lineCap = 'round';
+canvasContext.strokeStyle = 'rgba(255, 127, 0, 0.5)';
+canvasContext.stroke();
+</pre>
+    </article>
+    <div id="canvasExampleId" class="canvasExample">
+ 	  <canvas id="canvas" width="838" height="180"></canvas>
+		  <script>
+		    var canvasContext = document.getElementById("canvas").getContext("2d");
+		    canvasContext.fillRect(250, 25, 150, 100);
+		    canvasContext.beginPath();
+		    canvasContext.arc(350, 110, 50, Math.PI * 1/2, Math.PI * 3/2);
+		    canvasContext.lineWidth = 15;
+		    canvasContext.lineCap = 'round';
+		    canvasContext.strokeStyle = 'rgba(255, 127, 0, 0.5)';
+		    canvasContext.stroke();
+		 </script>
+	</div>
+  </slide>
+  <slide>
+  <hgroup>
+      <h2>Canvas</h2>
+      <h3>2D - Example</h3>
+    </hgroup>
+    <article>
+<pre class="prettyprint" data-lang="javascript">
+var canvas = document.getElementById("canvas");  
+var canvasContext = canvas.getContext("2d");  
+canvasContext.fillStyle = "red";  
+canvasContext.beginPath();  
+canvasContext.moveTo(30, 30);  
+canvasContext.lineTo(150, 150);  
+canvasContext.bezierCurveTo(60, 70, 60, 70, 70, 150); 
+canvasContext.lineTo(30, 30);  
+canvasContext.fill();
+</pre>
+	 <a class="runningDemoExample" href="http://www.htmlfivewow.com/slide49">demo</a>
+	<div id="canvasExampleId2" class="canvasExample2">
+ 	  <canvas id="canvas2" width="838" height="180"></canvas>
+		  <script>
+		    var canvas = document.getElementById("canvas2");  
+			var canvasContext = canvas.getContext("2d");  
+			canvasContext.fillStyle = "red";  
+			canvasContext.beginPath();  
+			canvasContext.moveTo(30, 30);  
+			canvasContext.lineTo(150, 150);  
+			canvasContext.bezierCurveTo(60, 70, 60, 70, 70, 150); 
+			canvasContext.lineTo(30, 30);  
+			canvasContext.fill();
+		 </script>
+	</div>
+    </article>
+  </slide>
+<!-- Bookcase demo -->
+<slide>
+	<hgroup>
+	      <h2>Canvas and WebGL</h2>
+	      <h3>demo</h3>
+	    </hgroup>
+		<iframe data-src="http://workshop.chromeexperiments.com/bookcase/" style="height:450px;"></iframe>
+		<span style="font-size:16px;margin-left: 250px;"><b>source</b>:&nbsp;&nbsp;<a href="http://workshop.chromeexperiments.com/bookcase/">http://workshop.chromeexperiments.com/bookcase/</a></span>
+</slide>
+<!-- SVG -->
+<slide>
+  <hgroup>
+      <h2>SVG</h2>
+      <h3>example 1</h3>
+    </hgroup>
+    <article>
+<pre class="prettyprint" data-lang="html">
+&lt;svg&gt;
+    &lt;rect x="250" y="100" rx="20" ry="20" width="150" height="150" 
+        style="fill:red;stroke:black;stroke-width:5;opacity:0.5"/&gt;
+    &lt;circle id="myCircle" cx="50%" cy="50%" r="100"  fill="#D00000" /&gt;
+    &lt;polygon points="100,10 40,180 190,60 10,60 160,180"     
+        style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" /&gt;
+&lt;/svg&gt;
+</pre>
+	<div id="svgExampleId" class="svgExample">
+      <svg>
+        <rect x="300" y="30" rx="20" ry="20" width="150" height="150" style="fill:red;stroke:black;stroke-width:5;opacity:0.5"/>
+		<circle id="myCircle" cx="100" cy="92" r="20"  fill="#D00000" />
+		<polygon points="100,10 40,180 190,60 10,60 160,180" style="fill:#0000D0;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+     </svg>
+		</html>
+	</div>
+    </article>
+  </slide>
+  <slide>
+  <hgroup>
+      <h2>SVG</h2>
+      <h3>example 2</h3>
+    </hgroup>
+    <article>
+<pre class="prettyprint" data-lang="html">
+&lt;svg&gt;
+    &lt;defs&gt;
+        &lt;linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%"&gt;
+            &lt;stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" /&gt;
+            &lt;stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" /&gt;
+		&lt;/linearGradient&gt;
+    &lt;/defs&gt;
+	&lt;ellipse cx="200" cy="70" rx="85" ry="55" fill="url(#grad1)" /&gt;
+	&lt;text fill="#ffffff" font-size="45" font-family="Verdana" x="150" y="86"&gt;SVG&lt;/text&gt;
+&lt;/svg&gt;
+</pre>
+	<div id="svgExampleId2" class="svgExample2">
+      	<svg>
+		  <defs>
+		    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+		      <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+		      <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+		    </linearGradient>
+		  </defs>
+		  <ellipse cx="200" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+		  <text fill="#ffffff" font-size="45" font-family="Verdana" x="150" y="86">SVG</text>
+		</svg>
+		</html>
+	</div>
+    </article>
+  </slide>
+<!-- SVG Example 3 -->
+<slide>
+  <hgroup>
+      <h2>SVG</h2>
+      <h3>example 3</h3>
+    </hgroup>
+    <article>
+<pre class="prettyprint" data-lang="html">
+&lt;svg&gt;
+    &lt;defs&gt; &lt;path id="svgTextPath" d="M 0,50 C 200,50 200,300 400,150 C 600,0 600,300 800,295" /&gt; &lt;/defs&gt;
+    &lt;text&gt;
+        &lt;textPath xlink:href="#svgTextPath"&gt;&lt;tspan&gt;Sometimes I have to put text on a path&lt;/tspan&gt;&lt;/textPath&gt;
+    &lt;/text&gt;
+&lt;/svg&gt;
+</pre>
+<span class="originalSVG3">source:&nbsp;&nbsp;<a href="http://www.htmlfivewow.com/slide40">http://www.htmlfivewow.com/slide40</a></span>
+		    <div data-build>
+		      <div>
+		        <svg width="100%" height="300px"
+		             version="1.1" viewBox="0 0 800 300" preserveAspectRatio="none">
+		          <defs>
+		            <path id="svgTextPath"
+		                  d="M 0,50
+		                     C 200,50 200,300 400,150
+		                     C 600,0 600,300 800,295"/>
+		          </defs>
+		          <style type="text/css"><![CDATA[
+		            .Text { font: 45px Verdana; fill: blue;}
+		            .Line { fill: none; stroke: red; stroke-width:3 }
+		          ]]></style>
+		          <use class="Line" xlink:href="#svgTextPath" />
+		          <text class="Text">
+		            <textPath method="align" spacing="auto"
+		                      xlink:href="#svgTextPath">
+		              <tspan>Sometimes I have to put text on a path</tspan>
+		            </textPath>
+		          </text>
+		        </svg>
+		      </div>
+		      <input class="wide" type="text" value="Sometimes I have to put text on a path">
+		    </div>
+    </article>
+  </slide>
+<!-- hardware access -->
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Device Access</h2>
+      <h3>Deeper Integration with the Operating System.</h3>
+    </hgroup>
+  </slide>
+<!-- drag drop -->
+  <slide>
+    <hgroup>
+      <h2>Native Drag and Drop</h2>
+      <h3>draggable, ondragstart, ondragover, ondrop</h3>
+    </hgroup>
+  <article>
+<pre class="prettyprint" data-lang="html">
+&lt;div id="div1" ondrop="drop(event)" ondragover="allowDrop(event);" /&gt;
+&lt;img src="images/sky.jpg" draggable="true" ondragstart="drag(event);" /&gt;
+</pre>
+<pre class="prettyprint" data-lang="javascript" style="width:700px;">
+function allowDrop(ev) { 
+    ev.preventDefault(); 
+}
+function drag(ev) { 
+    ev.dataTransfer.setData("Text",ev.target.id); 
+}
+function drop(ev) {
+    ev.preventDefault();
+    var data=ev.dataTransfer.getData("Text");
+    ev.target.appendChild(document.getElementById(data));
+}
+</pre>
+  </article>
+  <article>
+ <div id="dragDropExample">
+     <div id="dragDropDestId" class="dragDropDest" ondrop="drop(event);" ondragover="allowDrop(event);" />
+	  <div style="height: 150px;"></div>
+	<img src="images/sky.jpg" style="float:left;" width="100" height="100" draggable="true" ondragstart="drag(event);" id="drag1" />
+
+ </div>
+<script>
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+function drag(ev) {
+  ev.dataTransfer.setData("Text",ev.target.id);
+}
+function drop(ev) {
+  ev.preventDefault();
+  var data=ev.dataTransfer.getData("Text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
+
+</article>
+</slide>
+<!-- The fielsystems API -->
+<slide>
+	<hgroup>
+		<h2>Filesystems API</h2>
+		<h3>requestFileSystem, getFile, fileReader, fileWriter</h3>
+	</hgroup>
+<article>
+<pre class="prettyprint" data-lang="javascript">
+	
+// Getting handle to the file system.
+window.requestFileSystem(window.TEMPORARY, 5*1024*1024 /*5MB*/, 
+    function (fs) { ... }, errorHandler);
+// Creating a file.
+fs.root.getFile('log.txt', {create: true, exclusive: true}, 
+    function(fileEntry) { .. }, errorHandler);
+// Reading a file.
+fileEntry.file(function(file) { ...}, errorHandler};
+// Writing or appending to a file.
+fileEntry.createWriter(function(fileWriter) { ....}, errorHandler);
+// Removing a file.
+fileEntry.remove(function() { ..}, errorHandler);
+</pre>
+</article>
+</slide>
+
+<slide>
+  <hgroup>
+    <h2>HTML5 Terminal</h2>
+  </hgroup>
+  <article>
+    <iframe style="margin-top:-20px;" data-src="http://www.htmlfivewow.com/demos/terminal/terminal.html"></iframe>
+  </article>
+<span style="font-size:16px;margin-left: 250px;"><b>source</b>:&nbsp;&nbsp;<a href="http://www.htmlfivewow.com/demos/terminal/terminal.html">http://www.htmlfivewow.com/demos/terminal/terminal.html</a></span>
+</slide>
+<!-- device orientation -->
+<slide>
+	<hgroup>
+		<h2>Device orientation</h2>
+		<h3> deviceorientation</h3>
+	</hgroup>
+	<article>
+<pre class="prettyprint" data-lang="javascript">
+window.addEventListener('deviceorientation', function(event) {
+    var alpha = event.alpha; <span style="font-size:16px;">// The direction the device is facing according to the compass.</span>
+    var beta = event.beta, <span style="font-size:16px;">// The angle in degrees the device is tilted front-to-back.</span>
+    var gamma = event.gamma; <span style="font-size:16px;">// The angle in degrees the device is tilted left-to-right.</span>
+    // Set the "transform" property based on values of alpha, beta, gamma.	  
+}, false);
+</pre>
+	</article>
+	<div>
+	   <div id="orientationWrap" style="position:absolute; top: 350px; left: 300px;">
+	      <div class="layer" style="position: absolute; left: 0px; top: 0px; transform: rotateY(0deg) rotateX(0deg); "><img src="images/chrome-layer-01.png"></div>
+	       <div class="layer" style="position: absolute; left: 0px; top: 0px; transform: rotateY(0deg) rotateX(0deg); "><img src="images/chrome-layer-02.png"></div>
+	       <div class="layer" style="position: absolute; left: 0px; top: 0px; transform: rotateY(0deg) rotateX(0deg); "><img src="images/chrome-layer-03.png"></div>
+	       <div class="layer" style="position: absolute; left: 0px; top: 0px; transform: rotateY(0deg) rotateX(0deg); "><img src="images/chrome-layer-04.png"></div>
+	       <div class="layer" style="position: absolute; left: 0px; top: 0px; transform: rotateY(0deg) rotateX(0deg); "><img src="images/chrome-layer-05.png"></div>
+	   </div>
+   </div>
+</slide>
+<!-- geolocation -->
+<slide>
+  <hgroup>
+	<h2>Geolocation</h2>
+	<h3>navigator.geolocation</h3>
+  </hgroup>
+  <article>
+<pre class="prettyprint" data-lang="javascript" style="width:560px;">
+
+
+navigator.geolocation.getCurrentPosition(
+    function(position) { // Success handler.
+        var acc = position.coords.accuracy;
+        var lat = position.coords.latitude;
+        var log = position.coords.longitude;
+        ...
+    }, 
+    function(evt) {  // Error handler.
+    }
+);
+</pre>
+   </article>
+   <input type="button" value="Show location" class="showLocationBtn" onclick="showLocation();">
+   <span id="geolog" class="geoLog"></span>
+    <div id="geomap" class="geoMapExample">
+       <img src="http://maps.google.com/maps/api/staticmap?center=37.4419,-94.1419&amp;zoom=3&amp;size=400x400&amp;sensor=true">
+    </div>
+ </slide>
+<!-- speech input -->
+<slide>
+  <hgroup>
+	<h2>Speech Input</h2>
+	<h3>xspeech</h3>
+  </hgroup>
+  <article>
+<pre class="prettyprint" data-lang="html">
+&lt;input id="speech-input-field" type="text" x-webkit-speech /&gt;
+</pre>
+	<input id="speech-input-field" class="speechInputExample" type="text" x-webkit-speech />
+  </article>
+  </slide>
+<!-- Local Storage -->
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Offline & Storage</h2>
+      <h3>Serving without the server.</h3>
+    </hgroup>
+ </slide>
+<!-- Local storage -->
+<slide>
+  <hgroup>
+	<h2>Web Storage</h2>
+	<h3>local storage, session storage.</h3>
+  </hgroup>
+ 	<article>
+	  <p>
+		<ul class="build" style="font-size:22px;">
+			<li>Web pages allowed to <b>store named key/value pairs locally</b>, within the client web browser.<br/><br/></li>
+			<li><b>Local Storage:</b>&nbsp;&nbsp;The data persists even after the user closes the browser window.<br/><br/></li>
+			<li><b>Session Storage:</b>&nbsp;&nbsp;The data is available only for the particular session, and is deleted when the tab closes.<br/><br/></li>
+			<li><b>Use cases:</b> Storing user preferences or game states locally.<br/><br/>
+			</li>
+			<li>Unlike cookies, the stored data is <b>never sent to the remote server.</b><br/><br/></li>
+			<li>Implemented <b>natively</b> in the web browsers.<br/><br/></li>
+			<li> <b>5 MB limit</b> per origin, not-extendable.</li> 
+		</ul>
+	</p>
+</article>
+  </slide>
+<!-- Web storage -->
+<slide>
+  <hgroup>
+	<h2>Web Storage</h2>
+	<h3>getItem, setItem, removeItem, clear</h3>
+  </hgroup>
+ <article>
+<pre class="prettyprint" data-lang="javascript">
+localStorage.setItem('foo', 1234);
+var x1 = localStorage.getItem('foo');
+localStorage.setItem('bar', 'helloWorld');
+var x2 = localStorage.length;
+var x3 = localStorage.foo;
+localStorage.removeItem('foo');
+var x4 = localStorage.getItem('foo');
+var x5 = localStorage.length;
+localStorage.clear();
+var x6 = localStorage.length;
+</pre>
+<div class="localStorageDiv1 localStorageDiv" onclick="localStorage.setItem('foo', 1234);alert('key \'foo\' added');" )>execute</div>
+<div class="localStorageDiv2 localStorageDiv" onclick="alert('x1 = ' + localStorage.getItem('foo'));">execute</div>
+<div class="localStorageDiv3 localStorageDiv" onclick="localStorage.setItem('bar', 'helloWorld');alert('key \'bar\' added');">execute</div>
+<div class="localStorageDiv4 localStorageDiv" onclick="alert('x2 = ' + localStorage.length);">execute</div>
+<div class="localStorageDiv5 localStorageDiv" onclick="alert('x3 = ' + localStorage.foo)">execute</div>
+<div class="localStorageDiv6 localStorageDiv" onclick="localStorage.removeItem('foo');alert('key \'foo\' removed');">execute</div>
+<div class="localStorageDiv7 localStorageDiv" onclick="alert('x4 = ' + localStorage.getItem('foo'));">execute</div>
+<div class="localStorageDiv8 localStorageDiv" onclick="alert('x5 = ' + localStorage.length);">execute</div>
+<div class="localStorageDiv9 localStorageDiv" onclick="localStorage.clear();alert('localStorage cleared.');">execute</div>
+<div class="localStorageDiv10 localStorageDiv" onclick="alert('x6 = ' + localStorage.length);">execute</div>
+</article>
+<a href="http://project.mahemoff.com/timer/timer.html" style="font-size:16px; float: right; margin-top:10px;">timer demo</a>
+</slide>
+<!-- web sql. Obsolete. -->
+<!-- 
+<slide>
+ <hgroup>
+	<h2>Websql</h2>
+	<h3>openDatabase, transaction, executesql</h3>
+  </hgroup>
+  <article>
+   <pre class="prettyprint" data-lang="js">
+// Open a database. Create if it doesn't exist.
+var db = openDatabase('mydb', '1.0', 'Test DB', 2 * 1024 * 1024);
+
+// A transaction is a series of SQL operations.
+db.transaction(function (tx) {
+    tx.executeSql('CREATE TABLE IF NOT EXISTS LOGS (id unique, log)');
+    tx.executeSql('INSERT INTO LOGS (id, log) VALUES (1, "foobar")');
+    tx.executeSql('INSERT INTO LOGS (id, log) VALUES (2, "logmsg")');
+    tx.executeSql('UPDATE LOGS SET log="astast" WHERE id = 1');
+    tx.executeSql('SELECT * FROM LOGS', [], successCallback, failureCallback);
+    tx.executeSql('DROP TABLE LOGS', [], null, null);
+});
+</pre>
+<span class="webSqlExecute1 webSqlExecute" onclick="webSqlExecute1();">execute</span>
+<span class="webSqlExecute2 webSqlExecute" onclick="webSqlExecute2();">execute</span>
+<span class="webSqlExecute3 webSqlExecute" onclick="webSqlExecute3();">execute</span>
+<span class="webSqlExecute4 webSqlExecute" onclick="webSqlExecute4();">execute</span>
+<span class="webSqlExecute5 webSqlExecute" onclick="webSqlExecute5();">execute</span>
+<span class="webSqlExecute6 webSqlExecute" onclick="webSqlExecute6();">execute</span>
+<span class="webSqlExecute7 webSqlExecute" onclick="webSqlExecute7();">execute</span>
+</article>
+</slide>
+-->
+<!-- Appcache-->
+<slide>
+ <hgroup>
+	<h2>Application Cache</h2>
+	<h3>what and why?</h3>
+  </hgroup>
+  <article>
+      <ul class="build">
+        <li>A local cache where the entire pages are cached.<br/>
+		<ul class="build" style="font-size:22px;">
+			<li>Users can browse the websites even when they are offline.</li>
+			<li>The pages load faster (as they come from cache).</li>
+			<li>Server load is reduced: browser will only download changed resources.</li>
+		</ul><br/></li>
+		<li>The <b>server</b> decides whether the page should be cached.
+			<ul class="build" style="font-size:22px;">
+				<li><b>manifest file</b> contains list of all resources the browser might need in the offline mode.</li>
+				<li>Every 'cachable' HTML page must have the path of the manifest file set in the <b>'manifest' attribute of HTML tag.</b><br/><br/></li></ul>
+		<li>Programmatic access (<span style="font-family:courier;font-weight:bold;">window.applicationCache</span>) to manipulate the application cache.</li>
+	</ul>
+   </article>
+</slide>
+<!-- Appcache 2-->
+<slide>
+ <hgroup>
+	<h2>Application Cache</h2>
+	<h3>code and example.</h3>
+  </hgroup>
+  <article>
+      <pre data-lang="html" class="prettyprint" style="width:500px;">
+&lt;!DOCTYPE html&gt;
+&lt;html <b>manifest="/cache.manifest" </b>&gt;
+    &lt;body&gt;
+	 ...
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<a class="appCacheDemoExample" href="http://html5demos.com/offlineapp" target="_blank">external demo</a>
+<div class="manifestFileExample">
+<span class="manifestTitle">CACHE MANIFEST<br/></span>
+<span class="manifestComment"># 2010-06-18:v3<br/></span>
+<br/>
+<span class="manifestComment"># Explicitly cached entries<br/></span>
+index.html<br/>
+css/style.css<br/>
+<br/>
+<span class="manifestComment"># Display if the user is offline<br/></span>
+<span class="manifestTitle">FALLBACK:<br/></span>
+/ /offline.html<br/>
+<br/>
+<span class="manifestComment"># Resources that require being online. <br/></span>
+<span class="manifestTitle">NETWORK:<br/></span>
+*<br/>
+<br/>
+<span class="manifestComment"># Additional resources to cache<br/></span>
+<span class="manifestTitle">CACHE:<br/></span>
+images/logo1.png<br/>
+images/logo2.png<br/>
+images/logo3.png<br/>
+</div>
+</article>
+	
+</slide>
+<!-- Realtime communication -->
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Connectivity</h2>
+      <h3>Stay connected.</h3>
+    </hgroup>
+  </slide>
+
+ <!-- web sockets --> 
+<slide>
+  <hgroup>
+	<h2>Web Sockets</h2>
+	<h3>what and how?</h3>
+  </hgroup>
+  <article>
+	<ul class="build">
+		<li>API to establish a full-duplex, bidirectional communication over the web.<br/></br/></li>
+		<li>Both the server and client can send data any time, even at the same time.<br/></br/></li>
+		<li>Only the data is sent, not the HTTP headers.<br/></br/></li>
+		<li>Enables cross-domain communication.</br/></br/></li>
+		<li>The websocket protocol (ws://) uses the HTTP upgrade system and "upgrades" an HTTP connection to a websocket connection.</br/></br/></li>
+		<li>Use cases: Multiplayer online games, chat application, sports ticker, etc.</li>
+	</ul>		
+  </article>
+</slide>
+<!-- web sockets demo -->
+  <slide>
+  <hgroup>
+	<h2>Web Sockets</h2>
+	<h3>WebSocket</h3>
+  </hgroup>
+  <article>
+<pre class="prettyprint" data-lang="javascript">
+var addr = "ws://localhost/echo";
+var ws = new WebSocket(addr, ['soap', 'xmpp']);
+		
+// onopen event is fired when the socket connection is established.
+ws.onopen = function() {
+    ws.send('Hello Server!');
+}
+
+// onMessage event is fired when the client receives a message.
+ws.onmessage = function(event) {
+    alert("Server says: " + event.data);
+}
+</pre>
+		<span class="webSocketExecute" onclick="webSocketExecute();">execute</span>
+		<span class="externalDemo1"><a href="http://html5demos.com/web-socket" class="externalDemo2">external demo</a>&nbsp;&nbsp;(open in two windows)</span>
+
+  </article>
+</slide>
+<!-- Online offline -->
+<slide>
+	<hgroup>
+	<h2>Online/Offline Handlers</h2>
+	<h3>navigator.onLine</h3>
+  </hgroup>
+  <article>
+<pre class="prettyprint" data-lang="javascript">
+var statusElem = document.getElementById('onlineStatus')
+setInterval(
+    function () {
+        var online = navigator.onLine;
+        statusElem.className = online ? 'onlineStatus' : 'offlineStatus';
+        statusElem.innerHTML = online ? 'online' : 'offline';  
+    }, 250
+);
+</pre>
+
+    <div class="onlineStatusDiv">You are currently 
+	   <span id="onlineStatus"></span>
+    </div>
+  </article>
+<script>
+var statusElem = document.getElementById('onlineStatus')
+setInterval(function () {
+  statusElem.className = navigator.onLine ? 'onlineStatus' : 'offlineStatus';
+  statusElem.innerHTML = navigator.onLine ? 'online' : 'offline';  
+}, 250);
+</script>
+</slide>
+<slide class="segue dark nobackground">
+  <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+  <hgroup class="auto-fadein">
+	<!-- Semantics and markups -->
+    <h2>Semantics</h2>
+    <h3>More meaningful elements.</h3>
+  </hgroup>
+</slide>
+<!-- new semantic tags -->
+<slide>
+  <hgroup>
+      <h2>New Semantic Tags</h2>
+      <h3>nav, section, article, aside, figure, footer</h3>
+    </hgroup>
+    <article>
+	 <pre class="prettyprint" data-lang="html">
+&lt;article&gt;
+    &lt;h2&gt;New Tags defined by HTML5&lt;/h2&gt;
+    &lt;section&gt;Semantics Tags&lt;/section&gt;
+    &lt;section&gt;Input Tags&lt;/section&gt;
+&lt;/article&gt;
+&lt;aside&gt;Internet Explorer doesn't support these tags yet.&lt;/aside&gt;
+&lt;nav&gt;
+    &lt;a href="/css/"&gt;CSS&lt;/a&gt;
+    &lt;a href="/js/"&gt;JavaScript&lt;/a&gt;
+&lt;/nav&gt;
+&lt;figure&gt;
+    &lt;img src="flower.jpg" /&gt;
+    &lt;figurecaption&gt;Lotus&lt;/figurecaption&gt;
+&lt;/figure&gt;
+</pre>
+</article>
+</slide>
+<!-- datalist -->
+<slide>
+  <hgroup>
+      <h2>Datalist</h2>
+      <h3>list, datalist</h3>
+    </hgroup>
+    <article>
+<pre class="prettyprint" data-lang="html">
+&lt;input list="colors"/&gt;
+&lt;datalist id="colors"&gt;
+    &lt;option value="blue"/&gt;
+    &lt;option value="black"/&gt;
+    &lt;option value="brown"/&gt;
+    &lt;option value="bronze"/&gt;
+    &lt;option value="green"/&gt;
+    &lt;option value="gray"/&gt;
+    &lt;option value="ginger"/&gt;
+    &lt;option value="gold"/&gt;
+&lt;/datalist&gt;
+  </pre>
+  </article>
+  <div id="datalistExample" style="color: #800000;font-size:18px;margin-left:200px;font-weight: bold;">
+  Type your favorite Color:</span> &nbsp;&nbsp;&nbsp;<input list="colors"/>
+	<datalist id="colors">
+	  <option value="blue"/>
+	  <option value="black"/>
+	  <option value="brown"k>
+	  <option value="bronze"/>
+	  <option value="green"/>
+	  <option value="gray"/>
+	  <option value="ginger"/>
+	  <option value="gold"/>
+	</datalist>
+  </div>
+</slide>
+
+<!-- new input types -->
+<slide>
+  <hgroup>
+      <h2>New Input Types</h2>
+      <h3>range, meter, progress, date, color</h3>
+    </hgroup>
+    <article>
+<pre class="prettyprint" data-lang="html">
+&lt;input type="range" max="100" min="0" value="<span style="color:#009F5D;" id='ipv'>42</span>"/&gt;
+<input class="inputExample" type="range" max="100" min="0" value="42" onchange="document.getElementById('ipv').innerHTML=this.value;"/>
+&lt;meter max="100" min="0" value="76"&gt;&lt;/meter&gt;<meter class="inputExample"  max="100" min="0" value="76"></meter>
+
+&lt;progress max="100" value="48"&gt;&lt;/progress&gt;<progress class="inputExample" max="100" value="48"></progress>
+
+&lt;progress&gt;&lt;/progress&gt;<progress class="inputExample"></progress>
+
+&lt;input type='color' value="<span id='ipc' style="clear:both;color:#009F5D!important; font-weight:bold;">#FF0000</span>"/&gt;<input type="color" value="#FF0000" class="inputExample2" onchange="document.getElementById('ipc').innerHTML=this.value;"/>
+
+&lt;input type='date' value="<span id='ipd' style="color:#009F5D!important; font-weight:bold;">2012-07-06</span>"/&gt;<input type="date" class="inputExample" value='2012-07-06' onchange="document.getElementById('ipd').innerHTML=this.value;"/>
+
+&lt;input type='number' max="300" min="-300" step="3" 
+    value="<span id='ipn' style="color:#009F5D!important; font-weight:bold;">0</span>"/&gt;
+<input type="number" max="300" min="-300" step="3" value="0" class="inputExample3" onchange="document.getElementById('ipn').innerHTML=this.value;"/>
+</pre>
+</article>
+</slide>
+
+<!-- input constraints -->
+<slide>
+  <hgroup>
+      <h2>Input Constraints</h2>
+      <h3>email, pattern, required</h3>
+    </hgroup>
+    <article>
+<form action="javascript:void(0);">
+<pre class="prettyprint" data-lang="html">
+&lt;input type="email" size="80" />
+<input class="inputExample" type="email"/>
+&lt;input type="tel"  placeholder="3.14" 
+  pattern="[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?" /&gt;
+<input type="text"  class="inputExample" placeholder="3.14" pattern="[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?" />
+&lt;input type="text" size="80" required />
+<input class="inputExample" type="text" required/>
+
+
+<input type="submit" class="inputExample3" style="width:80px;"/>
+  </pre>
+</article>
+</slide>
+<!-- Javascript Enhancements -->
+<slide class="segue dark nobackground">
+  <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+  <hgroup class="auto-fadein">
+	<!-- Performance and Integration -->
+    <h2>Performance & Integration</h2>
+    <h3>Convenience++.&nbsp;&nbsp;&nbsp;Performance++.&nbsp;&nbsp;&nbsp;Features++.</h3>
+  </hgroup>
+</slide>
+<!-- Web workers -->
+  <slide>
+  <hgroup>
+	<h2>Web Workers</h2>
+	<h3>postMessage, terminate</h3>
+  </hgroup>
+  <article>
+<pre class="prettyprint" data-lang="javascript" style="width:630px;">
+// main.js
+function findPrimesWithWorker() {
+    worker = new Worker('js/worker.js');
+    worker.onmessage = function (event) {
+	    var message = event.data;
+	}
+    worker.postMessage();
+}
+
+//worker.js
+self.onmessage = function(e) {
+    var n = someComputationallyIntensiveStuff();
+    postMessage(n);
+}
+</pre>
+	<div class="webWorkerExampleTxt1">Find primes without web workers.&nbsp;&nbsp;
+	  <input type="button" class="webWorkerButton" onclick="findPrimesWithoutWorker()" value="start"> 
+	  <input type="button" class="webWorkerButton"  onclick="stopPrimesWithoutWorker()" value="stop"> 
+	</div>
+	<div class="webWorkerExampleTxt2">Find primes with web workers.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="button" onclick="findPrimesWithWorker()" value="start"> 
+		<input type="button" onclick="stopPrimesWithWorker()" value="stop"> 
+	</div>
+  	<div class="webWorkerResultTxt"> The largest prime discovered so far is: </div><div id="webWorkerResult" class="webWorkerResultSpan"></div>
+    </div>
+   <div class="webWorkerExampleTxt3">click this button to win a jackpot:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="click me!" onclick="alert('Hello world!');" /></div>
+</article>
+  </slide>
+<!-- history API -->
+ <slide>
+   <hgroup>
+      <h2>History API</h2>
+      <h3>bring it back!</h3>
+    </hgroup>
+    <article>
+	<ul class="build">
+		<li>Standardized way to manipulate browser history via scripts.<br/><br/></li>
+		<li>APIs to edit browser entries and change the URL in the location bar.<br/><br/></li>
+		<li>Events to capture the change in the browser's stack that happen on clicking back or forward button.<br/><br/></li>
+		<li>Most common use case: Preserving the navigation without actually reloading the pages:<br/>
+		<ul class="build" style="margin-left:100px;font-size:22px;">
+			<li>Load only that part of new page that is different from current page, using XMLHttpRequest.</li>
+			<li>Swap in the changed content using DOM manipulation methods.</li>
+	    	<li>Update the browser location and the browser history using the History API.</li>
+		</ul></li>
+	</ul>
+    </article>
+</slide>
+<!-- history API Example -->
+ <slide>
+   <hgroup>
+      <h2>History API</h2>
+      <h3>history.pushState, history.popState, history.go</h3>
+    </hgroup>
+    <article>
+		<div class="historyExample" style="background-color:violet" onclick="setColorToMainBox('violet');"></div>
+		<div class="historyExample" style="background-color:indigo" onclick="setColorToMainBox('indigo');"></div>
+		<div class="historyExample" style="background-color:blue" onclick="setColorToMainBox('blue');"></div>
+		<div class="historyExample" style="background-color:green" onclick="setColorToMainBox('green');"></div>
+		<div class="historyExample" style="background-color:yellow" onclick="setColorToMainBox('yellow');"></div>
+		<div class="historyExample" style="background-color:orange" onclick="setColorToMainBox('orange');"></div>
+		<div class="historyExample" style="background-color:red" onclick="setColorToMainBox('red');"></div>
+		<div class="historyExample" style="background-color:wheat" onclick="setColorToMainBox('wheat');"></div>
+		<div class="historyExample" style="background-color:chocolate" onclick="setColorToMainBox('chocolate');"></div>
+		<div class="historyExample" style="background-color:teal" onclick="setColorToMainBox('teal');"></div>
+		<div class="historyExample" style="background-color:brown" onclick="setColorToMainBox('brown');"></div>
+		<div class="historyExample" style="background-color:gold" onclick="setColorToMainBox('gold');"></div>
+		<div class="historyExample" style="background-color:lightGreen" onclick="setColorToMainBox('lightGreen');"></div>
+		<div class="historyExample" style="background-color:tan" onclick="setColorToMainBox('tan');"></div>
+		<div class="historyExample" style="background-color:lime" onclick="setColorToMainBox('lime');"></div>
+		<div class="historyExample" style="background-color:aqua" onclick="setColorToMainBox('aqua');"></div>
+		<div class="historyMainBoxExample" id="historyMainBoxExampleId"></div>
+<pre class="prettyprint" id="historyCode" data-lang="javascript" style="display: none;margin-top: 50px; width:800px;" >
+function setColor(color) {
+    $('bigBox').style.backgroundColor = color;
+    var url = window.location.pathname + '#color=' + color;
+    <b>history.pushState(null, null, url);</b>
+}
+<b>window.addEventListener('popstate', function(e)</b> {
+    var color = window.location.hash.split('=')[1] || 'white';
+    $('bigBox').style.backgroundColor = color;
+});
+</pre>
+ 	<span class="historyShowMe" onclick="document.getElementById('historyCode').style.display='block';">show me how!</span>
+ </article>
+</slide>
+<!-- selector API-->
+ <slide>
+   <hgroup>
+      <h2>Selector API, classList API</h2>
+      <h3>querySelector, classList</h3>
+    </hgroup>
+    <article>
+<pre class="prettyprint" data-lang="javascript">
+var els = document.querySelectorAll("ul li:nth-child(odd)");
+var tds = document.querySelectorAll("table.test > tr > td");
+var el = document.querySelector("table.test > tr > td"); // el == tds[0]
+    
+document.getElementById('layer').classList.add('myclass');
+document.getElementById('layer').classList.remove('myclass2');
+document.getElementById('layer').classList.toggle('myclass3');
+</pre>
+</article>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Wrapping it all</h2>
+      <h3>It's only the beginning...</h3>
+    </hgroup>
+  </slide>
+<!-- browser support -->
+<slide>
+	<hgroup>
+	      <h2>Feature and Browser Support</h2>
+	      <h3>things to remember...</h3>
+	</hgroup>
+	<article>
+		<div style="height:50px;"></div>
+		<img src="images/ie.png" height="120" width="120" style="margin:20px;" />
+		<img src="images/ff.png" height="120" width="120" style="margin:20px;" />
+		<img src="images/cr.png" height="120" width="120" style="margin:20px;margin-left:40px;" />
+		<img src="images/saf.png" height="120" width="120" style="margin:20px;margin-left:60px;" />
+		<img src="images/op.png" height="120" width="120" style="margin:20px;" />
+		<div style="height:0px;"></div>
+		<div class="iePrefix">-ms-</div>
+		<div class="mozPrefix">-moz-</div>
+		<div class="crPrefix">-webkit-</div>
+		<div class="safPrefix">-webkit-</div>
+		<div class="opPrefix">-o-</div>
+		
+	</article>
+</slide>
+<!-- some more demos -->
+<slide>
+	<hgroup>
+		<h2>Some more demos</h2>
+		<h3>..that will make you say 'wow'!</h3>
+	</hgroup>
+	<article>
+	<div class="moreDemoLink"><a href="http://thecodeplayer.com/walkthrough/make-a-particle-system-in-html5-canvas">Particle System using Canvas</a></div>
+	<div class="moreDemoLink"><a href="http://lights.elliegoulding.com/">An interactive music experience</a></div>
+	<div class="moreDemoLink"><a href="http://oos.moxiecode.com/js_webgl/forest/index.html">Endless forest</a></div>
+	<div class="moreDemoLink"><a href="http://html5-demos.appspot.com/static/html5-whats-new/template/index.html#32">Audio synthesis</a></div>
+	<div class="moreDemoLink"><a href="http://eminkura.com/html5/eyes/">Following eyes</a></div>
+	<div class="moreDemoLink"><a href="http://htmlfive.appspot.com/static/stickies.html">HTML5 Stickies</a></div>
+	<div class="moreDemoLink"><a href="http://everytimezone.com/">Every time zone</a></div>
+	<div class="moreDemoLink"><a href="http://studio.html5rocks.com/#Photos">Drag photos from desktop</a></div>
+	<div class="moreDemoLink"><a href="http://craftymind.com/factory/html5video/CanvasVideo.html">Blow up the video!</a></div>
+	<div class="moreDemoLink"><a href="http://www.satine.org/research/webkit/snowleopard/snowstack.html">Picture library</a></div>
+	<div class="moreDemoLink"><a href="http://www.htmlfivewow.com/demos/photo-gallery/index.html">Photo gallery</a></div>
+	<div class="moreDemoLink"><a href="http://www.htmlfivewow.com/slide49">Running Chrome-man</a></div>
+	<div class="moreDemoLink"><a href="http://www.htmlfivewow.com/slide52">Chrome logo from particles</a></div>
+	<div class="moreDemoLink"><a href="http://www.htmlfivewow.com/demos/hal/index.html">GAL 9000</a></div>
+	</article>
+</slide>
+
+<!-- things we did not cover -->
+ <slide>
+	<hgroup>
+	      <h2>Things we did not cover...</h2>
+	      <h3>a lot.</h3>
+	</hgroup>
+	   	<div class="notCovered">Web Fonts</div>
+		<div class="notCovered">Dynamic CSS</div>
+		<div class="notCovered">Battery API</div>
+		<div class="notCovered">Indexed DB</div>
+		<div class="notCovered">Quota API</div>
+	    <div class="notCovered">WebGL</div>
+		<div class="notCovered">Microdata</div>
+		<div class="notCovered">Camera and Microphone Access</div>
+		<div class="notCovered">Desktop Drag-in and Drag-out</div>
+		<div class="notCovered">Audio Processing</div>
+		<div class="notCovered">Gamepad API</div>
+		<div class="notCovered">Audio Recording</div>
+		<div class="notCovered">Blob URLs</div>
+		<div class="notCovered">Border Images</div>
+		<div class="notCovered">Efficient Data Transfer</div>
+		<div class="notCovered">XMLHTPPRequest2</div>
+		<div class="notCovered">Binary Web Sockets</div>
+		<div class="notCovered">Notifications</div>
+		<div class="notCovered">Aria Attributes</div>
+		<div class="notCovered">Link Relations</div>
+	</slide>
+
+
+<!-- dive deeper -->
+<slide>
+	<hgroup>
+	      <h2>Dive Deeper</h2>
+		    <h3>...if you are searching for pearls.</h3>
+	</hgroup>
+	<article>
+	       <ul>
+		   <li><b>Articles:</b>&nbsp;&nbsp;<a href="http:/www.html5rocks.com">html5rocks.com</a>&nbsp;&nbsp;<a href="http://diveintohtml5.info">diveintohtml5.info</a><br/><br/></li>
+		   <li><b>Presentations:</b>&nbsp;&nbsp;<a href="http://htmlfivecan.com">htmlfivecan.com</a>&nbsp;&nbsp;<a href="http://htmlfivewow.com">htmlfivewow.com</a><br/><br/></li>
+		   <li><b>Demos:</b>&nbsp;&nbsp;<a href="http://www.chromeexperiments.com/">chromeexperiments.com</a>&nbsp;&nbsp;<a href="http://html5demos.com/">html5demos.com</a><br/><br/><li/>
+		   <li><b>Compatibility:</b>&nbsp;&nbsp;<a href="http://caniuse.com">caniuse.com</a>&nbsp;&nbsp;<a href="http://html5please.com/">html5please.com</a>&nbsp;&nbsp;<a href="http://modernizr.com">modernizr.com</a><br/><br/></li>
+		   <li><b>Ask:</b>&nbsp;&nbsp;<a href="http://groups.google.com/a/chromium.org/group/chromium-html5">groups.google.com/a/chromium.org/group/chromium-html5</a><br/><br/></li>
+		   <li><b>File Bugs:</b>&nbsp;&nbsp;<a href="http://crbugs.com">crbug.com</a><br/><br/></li>
+	
+    </article>	
+
+</slide>
+  <slide class="thank-you-slide2 segue nobackground">
+    <aside class="gdbar right"><img src="images/google_developers_icon_128.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <h2 style="margin-top:-100px;"><img src="images/html5_sticker.png" height="400" /></h2>
+    </article>
+    <p class="auto-fadein" data-config-contact>
+      <!-- populated from slide_config.json -->
+    </p>
+  </slide>
+
+  <slide class="logoslide dark nobackground">
+    <article class="flexbox vcenter">
+      <span><img src="images/google_developers_logo_white.png"></span>
+    </article>
+  </slide>
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+</html>
